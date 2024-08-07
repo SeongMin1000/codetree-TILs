@@ -30,11 +30,15 @@ int main() {
     }
 
     int count=0;
-    for(int i=1; i<=total; i++){
-        if(whereA[i]!=whereB[i]){
-            if(whereA[i-1]==whereB[i-1] && (i-1)!=0){
-                count++;
-            }
+    int head=0;
+    for(int i=1; i<total; i++){
+        if(whereA[i]-whereB[i]>0){
+            if(head==2) count++;
+            head=1;
+        }
+        else if(whereA[i]-whereB[i]<0){
+            if(head==1) count++;
+            head=2;
         }
     }
     cout<<count;
