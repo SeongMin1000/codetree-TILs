@@ -42,12 +42,13 @@ int main() {
 
     }
 
-    for(int i=1; i<=total; i++){
+    int ans=-1;
+    for(int i=1; i<total; i++){
         if(lineA[i]==lineB[i]){
-            cout<<i;
-            return 0;
+            ans=i;
+            break;
         }
     }
-    cout<<-1;
+    cout<<ans;
     return 0;
 }
