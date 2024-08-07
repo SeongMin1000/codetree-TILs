@@ -12,7 +12,7 @@ int main() {
 
     int max_count=0;
     int count=0;
-    int temp=0;
+    int temp=1;
     for(int j=0; j<n; j++){
       if(j==0 || arr[j]!=arr[j-1]){
         count=temp;
