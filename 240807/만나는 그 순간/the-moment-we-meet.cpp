@@ -42,11 +42,12 @@ int main() {
 
     }
 
-    for(int i=1; i<1000; i++){
+    for(int i=1; i<total; i++){
         if(lineA[i]==lineB[i]){
             cout<<i;
-            break;
+            return 0;
         }
     }
+    cout<<-1;
     return 0;
 }
