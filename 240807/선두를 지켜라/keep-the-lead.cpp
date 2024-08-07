@@ -19,7 +19,7 @@ int main() {
     }
 
     total=1;
-    for(int i=0; i<n; i++){
+    for(int i=0; i<m; i++){
         int v,t;
         cin>>v>>t;
 
@@ -32,7 +32,7 @@ int main() {
     int count=0;
     for(int i=1; i<=total; i++){
         if(whereA[i]!=whereB[i]){
-            if(whereA[i-1]==whereB[i-1] && i-1!=0){
+            if(whereA[i-1]==whereB[i-1] && (i-1)!=0){
                 count++;
             }
         }
