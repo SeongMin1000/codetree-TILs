@@ -42,7 +42,7 @@ int main() {
 
     }
 
-    for(int i=1; i<total; i++){
+    for(int i=1; i<=total; i++){
         if(lineA[i]==lineB[i]){
             cout<<i;
             return 0;
