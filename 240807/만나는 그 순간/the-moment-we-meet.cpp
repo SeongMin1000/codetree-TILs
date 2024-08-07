@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int lineA[1000]={};
-int lineB[1000]={};
+int lineA[1000001]={};
+int lineB[1000001]={};
 int total=1;
 
 int main() {
