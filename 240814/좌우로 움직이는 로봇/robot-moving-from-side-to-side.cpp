@@ -1,9 +1,11 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int lineA[2000001];
 int lineB[2000001];
-int timet=1;
+int timeA=1;
+int timeB=1;
 
 int main() {
     int n,m;
@@ -13,7 +15,7 @@ int main() {
         string d;
         cin>>t>>d;
         
-        for(int j=timet; j<timet+t; j++){
+        for(int j=timeA; j<timeA+t; j++){
             if(d=="L"){
                 lineA[j]=lineA[j-1]-1;
             }
@@ -21,28 +23,39 @@ int main() {
                 lineA[j]=lineA[j-1]+1;
             }
         }
-        timet+=t;  
+        timeA+=t;  
     }
 
-    timet=1;
-        for(int i=0; i<m; i++){
-            int t;
-            string d;
-            cin>>t>>d;
-            
-            for(int j=timet; j<timet+t; j++){
-                if(d=="L"){
-                    lineB[j]=lineB[j-1]-1;
-                }
-                else{
-                    lineB[j]=lineB[j-1]+1;
-                }
+    for(int i=0; i<m; i++){
+        int t;
+        string d;
+        cin>>t>>d;
+        
+        for(int j=timeB; j<timeB+t; j++){
+            if(d=="L"){
+                lineB[j]=lineB[j-1]-1;
             }
-            timet+=t;  
+            else{
+                lineB[j]=lineB[j-1]+1;
+            }
+        }
+        timeB+=t;  
     }
 
+    if(timeA<timeB){
+        for(int i=timeA; i<timeB; i++){
+            lineA[i]=lineA[i-1];
+        }
+    }
+    else if(timeA>timeB){
+        for(int i=timeB; i<timeA; i++){
+            lineB[i]=lineB[i-1];
+        }
+    }
+
+    int maxTime=max(timeA, timeB);
     int count=0;
-    for(int i=0; i<=timet; i++){
+    for(int i=1; i<maxTime; i++){
         if(lineA[i]==lineB[i] && i!=0){
             if(lineA[i-1]!=lineB[i-1]) {
                 count++;
