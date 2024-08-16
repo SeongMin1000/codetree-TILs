@@ -29,7 +29,7 @@ int main() {
     while(t--){
         int x=c+dx[dir];
         int y=r+dy[dir];
-        if(1>x || x>=n || 1>y || y>=n){
+        if(1>x || x>n || 1>y || y>n){
             dir=(dir+2)%4;
         }
         else{
