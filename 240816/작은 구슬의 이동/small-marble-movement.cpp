@@ -2,7 +2,7 @@
 using namespace std;
 
 int dx[4]={1,0,-1,0};
-int dy[4]={0,-1,0,1};
+int dy[4]={0,1,0,-1};
 int arr[51][51];
 
 int main() {
