@@ -53,27 +53,25 @@ int main() {
     }
 
     while(inging){
-        for(int i=0; i<4; i++){
-            int nx=startC+dx[dir];
-            int ny=startR+dy[dir];
+        int nx=startC+dx[dir];
+        int ny=startR+dy[dir];
 
-            if(0<=nx && nx<n && 0<=ny && ny<n){
-                if(arr[startR][startC]=='/'){
-                    dir=3-dir;
-                }
-                else{
-                    dir=(5-dir)%4;
-                }
-                count++;
+        if(0<=nx && nx<n && 0<=ny && ny<n){
+            if(arr[ny][nx]=='/'){
+                dir=3-dir;
             }
             else{
-                cout<<count;
-                inging=false;
-                break;
+                dir=(5-dir)%4;
             }
-            startC=nx;
-            startR=ny;
+            count++;
         }
+        else{
+            cout<<count;
+            inging=false;
+            break;
+        }
+        startC=nx;
+        startR=ny;
     }
 
     return 0;
