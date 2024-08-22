@@ -26,7 +26,7 @@ int main() {
                 cur++;
         }
         else if(dir=="D"){
-            if(cur!=breads.end())
+            if(cur!=breads.end() && *cur!=null)
                 breads.erase(cur);
                 cur++;
         }
