@@ -26,9 +26,8 @@ int main() {
                 cur++;
         }
         else if(dir=="D"){
-            if(cur!=breads.end() && *cur!=null)
+            if(cur!=breads.end() && breads.size()!=0)
                 breads.erase(cur);
-                cur++;
         }
         else{
             char w;
